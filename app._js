@@ -7,13 +7,16 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 
+var layout = require('fonflatter-layout/app');
+
 var app = express();
 
+app.locals.views = [layout.locals.views, path.join(__dirname, 'views')];
+
 // view engine setup
-nunjucks.configure(path.join(__dirname, 'views'), {
-    express: app,
-    autoescape: true
-});
+var viewLoader = new nunjucks.FileSystemLoader(app.locals.views);
+var viewEnv = new nunjucks.Environment(viewLoader, { autoescape: true });
+viewEnv.express(app);
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(__dirname + '/public/favicon.ico'));
@@ -24,6 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes/index')(app);
+app.use('/', layout);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, _) {
