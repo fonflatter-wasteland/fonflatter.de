@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var nunjucks = require('nunjucks');
 
 var layout = require('fonflatter-layout/app');
+var transcriptions = require('fonflatter-transcriptions/app');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes/index')(app);
 app.use('/', layout);
+app.use('/transcriptions', transcriptions);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, _) {

@@ -23,6 +23,7 @@
         "express": "4.X",
         "express-streamline": "0.5.X",
         "fonflatter-layout": "git://github.com/fonflatter/layout.git",
+        "fonflatter-transcriptions": "git://github.com/fonflatter/transcriptions.git",
         "morgan": "1.X",
         "nunjucks": "1.X",
         "serve-favicon": "2.X",
