@@ -20,13 +20,13 @@
     "body-parser": "1.X",
     "cookie-parser": "1.X",
     "debug": "2.X",
-    "express": "4.X",
+    "express": "4.12.3",
     "express-streamline": "0.5.X",
     "fonflatter-layout": "git://github.com/fonflatter/layout.git#1.0.0",
     "fonflatter-transcriptions": "git://github.com/fonflatter/transcriptions.git#1.0.0",
     "morgan": "1.X",
     "nunjucks": "1.X",
     "serve-favicon": "2.X",
-    "streamline": "0.10.X"
+    "streamline": "0.12.1"
   }
 }
